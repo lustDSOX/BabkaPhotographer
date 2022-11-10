@@ -17,7 +17,7 @@ namespace WpfApp1.DataBaseClasses
         public ApplicationContext() => Database.EnsureCreated();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=ngknn.ru;Database=BabkaPhoto;User Id=33П;Password=12357;");
+            optionsBuilder.UseSqlServer(@"Server=ngknn.ru;Database=BabkaPhotographer;User Id=33П;Password=12357;");
         }
     }
 }
