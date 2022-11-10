@@ -59,5 +59,15 @@ namespace WpfApp1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] Spinner {
+            get {
+                object obj = ResourceManager.GetObject("Spinner", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
