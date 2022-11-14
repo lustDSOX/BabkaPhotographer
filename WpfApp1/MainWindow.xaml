@@ -66,15 +66,15 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10 0">
                     <Label Content="Login"/>
-                    <TextBox/>
+                    <TextBox x:Name="login"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Grid.Row="2" Margin="10 0">
                     <Label Content="Password"/>
-                    <PasswordBox/>
+                    <PasswordBox x:Name="password"/>
                 </StackPanel>
-                <Button Grid.Row="3" Margin="0 15 0 0" HorizontalAlignment="Center" Content="SIGN IN"/>
+                <Button Grid.Row="3" Margin="0 15 0 0" HorizontalAlignment="Center" Content="SIGN IN" Click="Button_Click"/>
             </Grid>
         </Border>
-        <Image gif:ImageBehavior.AnimatedSource ="images/Spinner.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Height="1in"/>
+        <!--<Image x:Name="image" gif:ImageBehavior.AnimatedSource ="images/Spinner.gif" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="1in" Width="1in" Visibility="Hidden"/>-->
     </Grid>
 </Window>

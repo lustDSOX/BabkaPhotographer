@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.DataBaseClasses
 {
-    internal class ApplicationContext:DbContext
+    public class ApplicationContext:DbContext
     {
         public DbSet<Contrpartner> Contrpartners { get; set; } = null!;
         public DbSet<Role> Roles{ get; set; } = null!;

@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\Settings.png" />
     <None Remove="images\Spinner.gif" />
   </ItemGroup>
 
@@ -17,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\Settings.png" />
     <Resource Include="images\Spinner.gif" />
   </ItemGroup>
 

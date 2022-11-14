@@ -8,10 +8,10 @@ namespace WpfApp1.DataBaseClasses
 {
     public class User
     {
-        int Id { get; set; }
-        string Login { get; set; }
-        string Passowd{ get; set; }
-        Role Role { get; set; }
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string Passowd{ get; set; }
+        public Role Role { get; set; }
         public User(string login, string passowd, Role role)
         {
             Login = login;

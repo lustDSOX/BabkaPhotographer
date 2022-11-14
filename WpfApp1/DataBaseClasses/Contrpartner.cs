@@ -8,8 +8,8 @@ namespace WpfApp1.DataBaseClasses
 {
     public class Contrpartner
     {
-        int Id { get; set; }
-        string Name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
         public Contrpartner(string name)
         {
