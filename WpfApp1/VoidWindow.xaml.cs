@@ -25,6 +25,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             frame.Navigate(new Monitor());
+            Manager.MainFrame = frame;
         }
     }
 }

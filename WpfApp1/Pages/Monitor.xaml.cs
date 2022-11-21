@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.DataBaseClasses;
 
 namespace WpfApp1.Frames
 {
@@ -20,13 +21,15 @@ namespace WpfApp1.Frames
     /// </summary>
     public partial class Monitor : Page
     {
+        ApplicationContext db;
         public Monitor()
         {
             InitializeComponent();
+            db = new ApplicationContext();
         }
         private void OpenSettings(object sender, RoutedEventArgs e)
         {
-            frame.Navigate(new Monitor());
+            Manager.MainFrame.Navigate(new UsersSettings(db));
         }
     }
 }

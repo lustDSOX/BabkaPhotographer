@@ -10,12 +10,13 @@ namespace WpfApp1.DataBaseClasses
     {
         public int Id { get; set; }
         public string Login { get; set; }
-        public string Passowd{ get; set; }
+        public string Password { get; set; }
+        public int RoleId { get; set; }
         public Role Role { get; set; }
         public User(string login, string passowd, Role role)
         {
             Login = login;
-            Passowd = passowd;
+            Password = passowd;
             Role = role;
         }
         public User() { }
