@@ -31,5 +31,10 @@ namespace WpfApp1.Frames
         {
             Manager.MainFrame.Navigate(new UsersSettings(db));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

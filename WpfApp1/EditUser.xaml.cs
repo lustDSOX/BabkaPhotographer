@@ -38,17 +38,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Update();
-        }
-
-        private void login_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) Update();
-        }
-
-        void Update()
-        {
-            if(id != -1)
+            if (id != -1)
             {
                 User user = db.Users.Find(id);
                 if (user != null)
@@ -67,7 +57,12 @@ namespace WpfApp1
                 db.SaveChanges();
                 Settings.UpdateList();
             }
-            
+
+        }
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) Update();
         }
     }
 }
