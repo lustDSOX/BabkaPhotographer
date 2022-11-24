@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.DataBaseClasses;
 
-namespace WpfApp1.Pages
+namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для AddService.xaml
+    /// Логика взаимодействия для SelectService.xaml
     /// </summary>
-    public partial class AddService : Page
+    public partial class SelectService : Window
     {
-        ApplicationContext db;
-        public AddService(ApplicationContext context)
+        public SelectService()
         {
             InitializeComponent();
-            db = context;
         }
     }
 }

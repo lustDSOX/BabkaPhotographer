@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\photographer.png" />
+    <None Remove="images\reload-time.png" />
     <None Remove="images\Settings.png" />
     <None Remove="images\Spinner.gif" />
   </ItemGroup>
@@ -18,8 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\photographer.png" />
+    <Resource Include="images\reload-time.png" />
     <Resource Include="images\Settings.png" />
-    <Resource Include="images\Spinner.gif" />
   </ItemGroup>
 
   <ItemGroup>

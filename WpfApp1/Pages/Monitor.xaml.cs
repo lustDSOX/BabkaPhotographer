@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.DataBaseClasses;
+using WpfApp1.Pages;
 
 namespace WpfApp1.Frames
 {
@@ -34,7 +35,7 @@ namespace WpfApp1.Frames
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new AddService(db));
         }
     }
 }

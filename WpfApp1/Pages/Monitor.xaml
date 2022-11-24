@@ -18,6 +18,6 @@
                 <Image Source="/images/Settings.png" Stretch="UniformToFill"/>
             </Button.Content>
         </Button>
-        <Button Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0" Content="ADD"/>
+        <Button Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 20 0" Content="ADD" Click="Button_Click"/>
     </Grid>
 </Page>

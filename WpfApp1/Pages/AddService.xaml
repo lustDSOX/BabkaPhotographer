@@ -6,9 +6,102 @@
       xmlns:local="clr-namespace:WpfApp1.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddService">
-
+      Title="AddService" Background="White">
+    <Page.Resources>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="0.18in"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="0" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="20 0" Orientation="Horizontal">
+            <Button Style="{DynamicResource ButtonStyle1}" Content="BACK" HorizontalAlignment="Left" />
+            <TextBox Margin="60 10 " Width="5in" BorderBrush="Black" BorderThickness="2"/>
+        </StackPanel>
+        <Border Grid.Row="1" Margin="20 0 20 20" BorderBrush="Black" BorderThickness="2" CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Style="{DynamicResource ButtonStyle2}">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/document.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Photo for document" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="1">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/filmphoto.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Photographic films" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="2">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/painter.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Artistic photo" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/printer.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Print photo" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="1">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/photographer.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Visit of the photographer" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="2">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="../images/reload-time.png" Stretch="Fill" Width="1in"/>
+                        <Label Content="Photo restoration" Foreground="Black"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+
+        <ListBox Grid.Row="1" Visibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Content="{Binding Path = Name}" Foreground="Black" Margin="30 0"/>
+                        <Label Content="{Binding Path = Prise}" Foreground="Black"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Page>

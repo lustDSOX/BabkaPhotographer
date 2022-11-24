@@ -62,7 +62,7 @@ namespace WpfApp1
 
         private void login_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter) Update();
+            if (e.Key == Key.Enter) Settings.UpdateList();
         }
     }
 }
