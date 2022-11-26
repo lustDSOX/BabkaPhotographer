@@ -27,5 +27,30 @@ namespace WpfApp1.Pages
             InitializeComponent();
             db = context;
         }
+
+        private void button_forDoc_Click(object sender, RoutedEventArgs e)
+        {
+            doc_image.Visibility = Visibility.Collapsed;
+            doc_text.Visibility = Visibility.Collapsed;
+            doc_count.Visibility = Visibility.Visible;
+            doc_but.Visibility = Visibility.Visible;
+        }
+
+        private void doc_count_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                int t = int.Parse(doc_count.Text[doc_count.Text.Length - 1].ToString());
+            }
+            catch
+            {
+                if(doc_count.Text.Length > 0)
+                {
+                    doc_count.Text = doc_count.Text.Remove(doc_count.Text.Length - 1);
+                    doc_count.SelectionStart = doc_count.Text.Length;  
+                }
+                
+            }
+        }
     }
 }

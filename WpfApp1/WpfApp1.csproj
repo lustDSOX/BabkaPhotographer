@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\document.png" />
+    <None Remove="images\filmphoto.png" />
+    <None Remove="images\painter.png" />
     <None Remove="images\photographer.png" />
+    <None Remove="images\printer.png" />
     <None Remove="images\reload-time.png" />
     <None Remove="images\Settings.png" />
     <None Remove="images\Spinner.gif" />
@@ -20,9 +24,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\photographer.png" />
-    <Resource Include="images\reload-time.png" />
-    <Resource Include="images\Settings.png" />
+    <Resource Include="images\document.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\filmphoto.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\painter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\photographer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\printer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\reload-time.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Settings.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
