@@ -26,9 +26,15 @@ namespace WpfApp1
 
         void Check()
         {
-            if (db.Users.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Password.ToString()) != null)
+            User user = db.Users.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Password.ToString());
+            if (user != null)
             {
-                VoidWindow monitor = new VoidWindow();
+                bool admin = false;
+                if(user.RoleId == 1)
+                {
+                    admin = true;
+                }
+                VoidWindow monitor = new VoidWindow(admin);
                 this.Close();
                 monitor.Show();
             }

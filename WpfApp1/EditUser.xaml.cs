@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 using WpfApp1.DataBaseClasses;
 
@@ -38,6 +39,29 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            NewUser();
+        }
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) NewUser();
+        }
+
+        private void Button_del(object sender, RoutedEventArgs e)
+        {
+            if (id != -1)
+            {
+                MessageBoxResult result = MessageBox.Show("Удалить пользоавтеля?", null, MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                   db.Users.Remove(db.Users.Find(id));
+                   Settings.UpdateList();
+                }
+            }
+        }
+
+        void NewUser()
+        {
             if (id != -1)
             {
                 User user = db.Users.Find(id);
@@ -58,11 +82,6 @@ namespace WpfApp1
                 Settings.UpdateList();
             }
 
-        }
-
-        private void login_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) Settings.UpdateList();
         }
     }
 }

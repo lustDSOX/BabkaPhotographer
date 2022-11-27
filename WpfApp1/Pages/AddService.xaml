@@ -39,10 +39,10 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="20 0" Orientation="Horizontal">
-            <Button Style="{DynamicResource ButtonStyle1}" Content="BACK" HorizontalAlignment="Left" />
-            <TextBox Margin="60 10 " Width="5in" BorderBrush="Black" BorderThickness="2"/>
+            <Button Style="{DynamicResource ButtonStyle1}" Content="BACK" HorizontalAlignment="Left" Click="Button_Click" />
+            <TextBox x:Name="SearchCam" Margin="60 10 " MinWidth="5in" MaxWidth="10in"  FontStretch="Medium" BorderBrush="Black" BorderThickness="2" TextChanged="TextBox_TextChanged"/>
         </StackPanel>
-        <Border Grid.Row="1" Margin="20 0 20 20" BorderBrush="Black" BorderThickness="2" CornerRadius="5">
+        <Border x:Name="Services" Grid.Row="1" Margin="20 0 20 20" BorderBrush="Black" BorderThickness="2" CornerRadius="5">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -58,43 +58,43 @@
                         <Image x:Name="doc_image" Source="../images/document.png" Stretch="Fill" Width="1in" Visibility="Visible"/>
                         <Label x:Name="doc_text" Content="Photo for document" Foreground="Black" Visibility="Visible"/>
                         <TextBox x:Name="doc_count" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed" TextChanged="doc_count_TextChanged"/>
-                        <Button x:Name="doc_but" Content="SELECT" Visibility="Collapsed"/>
+                        <Button x:Name="doc_but" Content="SELECT" Visibility="Collapsed" Click="doc_but_Click"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="1">
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="1" Click="button_Films_Click">
                     <StackPanel Orientation="Vertical">
                         <Image x:Name="films_image" Source="../images/filmphoto.png" Stretch="Fill" Width="1in"/>
                         <Label x:Name="films_text" Content="Photographic films" Foreground="Black"/>
                         <TextBox x:Name="films_count" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed" TextChanged="doc_count_TextChanged"/>
-                        <Button x:Name="films_but" Content="SELECT" Visibility="Collapsed"/>
+                        <Button x:Name="films_but" Content="SELECT" Visibility="Collapsed" Click="films_but_Click"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="2">
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Column="2" Click="button_Art_Click">
                     <StackPanel Orientation="Vertical">
                         <Image x:Name="art_image" Source="../images/painter.png" Stretch="Fill" Width="1in"/>
                         <Label x:Name="art_text" Content="Artistic photo" Foreground="Black"/>
                         <TextBox x:Name="art_count" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed" TextChanged="doc_count_TextChanged"/>
-                        <Button x:Name="art_but" Content="SELECT" Visibility="Collapsed"/>
+                        <Button x:Name="art_but" Content="SELECT" Visibility="Collapsed" Click="art_but_Click"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1">
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Click="button_Print_Click">
                     <StackPanel Orientation="Vertical">
                         <Image x:Name="print_image" Source="../images/printer.png" Stretch="Fill" Width="1in"/>
                         <Label x:Name="print_text" Content="Print photo" Foreground="Black"/>
                         <TextBox x:Name="print_count" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed" TextChanged="doc_count_TextChanged"/>
-                        <Button x:Name="print_but" Content="SELECT" Visibility="Collapsed"/>
+                        <Button x:Name="print_but" Content="SELECT" Visibility="Collapsed" Click="print_but_Click"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="1">
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="1" Click="Button_Click_1">
                     <StackPanel Orientation="Vertical">
                         <Image Source="../images/photographer.png" Stretch="Fill" Width="1in"/>
                         <Label Content="Visit of the photographer" Foreground="Black"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="2">
+                <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Grid.Column="2" Click="button_Rest_Click">
                     <StackPanel Orientation="Vertical">
-                        <Image Source="../images/reload-time.png" Stretch="Fill" Width="1in"/>
-                        <Label Content="Photo restoration" Foreground="Black"/>
+                        <Image x:Name="rest_image" Source="../images/reload-time.png" Stretch="Fill" Width="1in"/>
+                        <Label x:Name="rest_text" Content="Photo restoration" Foreground="Black"/>
                         <ComboBox x:Name="rest_status" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed">
                             <ComboBoxItem Content="50 рублей"/>
                             <ComboBoxItem Content="жить можно"/>
@@ -102,19 +102,24 @@
                             <ComboBoxItem Content="тазик твой друг"/>
                             <ComboBoxItem Content="плачевное"/>
                         </ComboBox>
-                        <Button x:Name="rest_but" Content="SELECT" Visibility="Collapsed"/>
+                        <Button x:Name="rest_but" Content="SELECT" Visibility="Collapsed" Click="rest_but_Click"/>
                     </StackPanel>
                 </Button>
             </Grid>
         </Border>
 
-        <ListBox Grid.Row="1" Visibility="Hidden">
+        <ListBox x:Name="Cameras" Grid.Row="1" Visibility="Hidden" MouseDoubleClick="Cameras_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Label Content="{Binding Path = Name}" Foreground="Black" Margin="30 0"/>
-                        <Label Content="{Binding Path = Prise}" Foreground="Black"/>
-                    </StackPanel>
+                        <Label Content="{Binding Path = Prise}" Foreground="Black" Grid.Column="1"/>
+                    </Grid>
+                    
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

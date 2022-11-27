@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.DataBaseClasses;
-using WpfApp1.Frames;
+using WpfApp1.Pages;
 
 namespace WpfApp1
 {
@@ -21,10 +21,15 @@ namespace WpfApp1
     /// </summary>
     public partial class VoidWindow : Window
     {
-        public VoidWindow()
+        public VoidWindow(bool admin)
         {
             InitializeComponent();
-            frame.Navigate(new Monitor());
+            Monitor monitor = new Monitor();
+            if (!admin)
+            {
+                monitor.settings.Visibility = Visibility.Hidden;
+            }
+            frame.Navigate(monitor);
             Manager.MainFrame = frame;
         }
     }
