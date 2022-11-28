@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
@@ -30,9 +31,11 @@ namespace WpfApp1
 
         void NewPhotographer()
         {
-            monitor.products.Add(new Product("Visit of the photographer", "1", "3000"));
+            ApplicationContext db = new ApplicationContext();
+            Service service = db.Services.Where(x => x.Name == "Visit of the photographer").First();
+            monitor.products.Add(new Product(service.Name, "1", service.Price.ToString()));
             monitor.basket.Items.Refresh();
-            monitor.result.Content = (double.Parse(monitor.result.Content.ToString()) + 3000).ToString();
+            monitor.result.Content = (double.Parse(monitor.result.Content.ToString()) + service.Price).ToString();
             this.Close();
         }
     }
